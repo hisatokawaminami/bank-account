@@ -1,12 +1,12 @@
-# Epicodus Week 4 Day1 Place You've Been
+# Epicodus Week 4 Day2 Bank Account
 
 ## Created
 
-06/11/2018
+06/12/2018
 
 ## About
 
-Create a webpage for Place You've been
+Create a webpage for Bank Account
 
 ## Spec
 

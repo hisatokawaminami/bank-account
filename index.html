@@ -1,13 +1,64 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <script src="js/jquery-3.3.1.js"></script>
-    <script src="js/scripts.js"></script>
-    <title></title>
-  </head>
-    <body>
-    </body>
+<head>
+  <meta charset="utf-8">
+  <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/scripts.js"></script>
+  <title>Bank Account</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Epicodus Bank</h1>
+
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Register a new account:</h2>
+        <form id="new-contact">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" class="form-control" id="name">
+
+          </div>
+          <div class="form-group">
+            <label for="initialDeposit">Initial Deposit:</label>
+            <input type="text" class="form-control" id="initialDeposit">
+
+          </div>
+          <button type="submit" class="btn btn-success">Register</button>
+
+        </div>
+        </form>
+
+      <div class="col-md-6">
+        <h2>Deposit or withdraw funds:</h2>
+        <form id="new-contact">
+          <div class="form-group">
+            <label for="deposit">Deposit Amount:</label>
+            <input type="text" class="form-control" id="deposit">
+
+          </div>
+          <div class="form-group">
+            <label for="withdraw">Withdrawal Amount:</label>
+            <input type="text" class="form-control" id="withdraw">
+          </div>
+          <span class="btn btn-primary" id="add-address">Deposit</span>
+
+          <button type="submit" class="btn btn-success">Withdraw</button><br><br>
+        </div>
+
+      </div>
+        </form>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label for="balance">Current Balance:</label>
+          <input type="text" class="form-control" id="balance">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 </html>
