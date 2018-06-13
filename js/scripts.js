@@ -1,50 +1,44 @@
-var balance;
-
-function BankAccount(name, initialDeposit){
+// business logic
+function BankAccount(name, amount){
   this.name = name;
-  this.initialDeposit = initialDeposit;
-
+  this.currentBalance = amount;
 }
 
-function depositWithdraw(deposit, withdraw){
-  this.deposit = deposit;
-  this.withdraw = withdraw;
-}
+// function DepositWithdraw(deposit, withdraw){
+//   this.deposit = deposit;
+//   this.withdraw = withdraw;
+// }
 
-BankAccount.prototype.depositWithdraw = function (amount) {
- amount += this.deposit;
+BankAccount.prototype.deposit = function(amount){
+this.currentBalance = this.currentBalance + amount;
 };
 
-BankAccount.prototype.withdraw = function(){
+BankAccount.prototype.withdraw = function(amount){
+  this.currentBalance = this.currentBalance - amount;
 
 }
 
+
+// user interface
 $(function(){
-  $("#formOne").submit(function(event){
-    event.preventDefault();
+    $("#formOne").submit(function(event){
+      event.preventDefault();
 
-    var inputtedName = $("#name").val();
-    var inputtedInitialDeposit = $("#initialDeposit").val();
+      var name = $("input#name").val();
+      var balanceTemp = parseInt($("input#initialDeposit").val());
 
-    var newBankAccount = new BankAccount(inputtedName, inputtedInitialDeposit);
-    balance = newBankAccount.initialDeposit
-    console.log(newBankAccount.initialDeposit);
-    $(".balance").text(balance);
+      var newBankAccount = new BankAccount(name, balanceTemp);
+    $(".balance").text(newBankAccount.currentBalance)
+
+    $("#balance").click(function(){
+      var deposit = parseInt($("input#deposit").val());
+      var withdraw = parseInt($("input#withdraw").val());
+
+      newBankAccount.deposit(deposit);
+      newBankAccount.withdraw(withdraw);
+
+      $(".balance").text(newBankAccount.currentBalance);
+
+    });
   });
-
-  $("#formTwo").submit(function(event){
-    event.preventDefault();
-
-    var inputtedDeposit = parseInt($("#deposit").val());
-    var inputtedWithdraw = parseInt($("#withdraw").val());
-
-    var sum = inputtedDeposit-inputtedWithdraw;
-
-    BankAccount.prototype.depositWithdraw(sum);
-
-    $(".balance").text(deposit);
-
-
-  });
-
-});
+    });
